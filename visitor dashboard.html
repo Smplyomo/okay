@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Dashboard</title>
+    <link rel="stylesheet" href="visitor dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome, <span id="visitor-name"></span></h2>
+        
+        <div class="visitor-info">
+            <p><strong>Email:</strong> <span id="visitor-email"></span></p>
+            <p><strong>Purpose of Visit:</strong> <span id="purpose"></span></p>
+            <p><strong>Host:</strong> <span id="host"></span></p>
+            <p><strong>Check-in Time:</strong> <span id="check-in-time"></span></p>
+            <p><strong>Check-out Time:</strong> <span id="check-out-time">Still Checked In</span></p>
+        </div>
+
+        <div class="badge">
+            <h3>Visitor Badge</h3>
+            <p id="badge-name"></p>
+            <p id="badge-email"></p>
+            <p id="badge-purpose"></p>
+        </div>
+
+        <button id="generate-receipt">Generate Receipt</button>
+        <button id="check-out-btn">Check Out</button>
+        <button id="logout">Logout</button>
+
+        <div id="receipt-container" class="receipt"></div>
+    </div>
+
+    <script src="visitor dashboard.js"></script>
+</body>
+</html>

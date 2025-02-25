@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .registration-container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #6a0dad;
+        }
+
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #6a0dad;
+            color: white;
+            cursor: pointer;
+        }
+
+        .pre-registration-link {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: white;
+            background-color: #6a0dad;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <h2>Visitor Registration</h2>
+        <form id="visitor-form">
+            <input type="text" id="visitor-name" placeholder="Full Name" required>
+            <input type="email" id="visitor-email" placeholder="Email" required>
+            <input type="text" id="purpose" placeholder="Purpose of Visit" required>
+            <input type="text" id="host" placeholder="Host Name" required>
+            <button type="submit">Register</button>
+        </form>
+        <button id="check-pre-registration">Check Pre-registration</button>
+    </div>
+
+    <script>
+        document.getElementById("visitor-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("visitor-name").value.trim();
+            let email = document.getElementById("visitor-email").value.trim();
+            let purpose = document.getElementById("purpose").value.trim();
+            let host = document.getElementById("host").value.trim();
+            let checkInTime = new Date().toLocaleString();
+
+            let visitorData = { name, email, purpose, host, checkInTime, role: "visitor" };
+            localStorage.setItem(email, JSON.stringify(visitorData));
+
+            alert("Registration successful! Redirecting to dashboard...");
+            sessionStorage.setItem("loggedInUser", email);
+            window.location.href = "visitor dashboard.html";
+        });
+
+        document.getElementById("check-pre-registration").addEventListener("click", function () {
+            let email = prompt("Please enter your email to check pre-registration:");
+            if (email) {
+                let visitorData = localStorage.getItem(email);
+                if (visitorData) {
+                    alert("You are pre-registered. Redirecting to dashboard...");
+                    sessionStorage.setItem("loggedInUser", email);
+                    window.location.href = "visitor dashboard.html";
+                } else {
+                    alert("No pre-registration found for this email.");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

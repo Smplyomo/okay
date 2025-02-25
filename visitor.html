@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Management | Visitor & Asset System</title>
+    <link rel="stylesheet" href="visitor.css">
+</head>
+<body>
+   
+        <main class="dashboard-main">
+            <h1>Visitor Management</h1>
+
+            <!-- Visitor Registration Form -->
+            <div class="form-container">
+                <h2>Register Visitor</h2>
+                <form id="visitor-form">
+                    <label for="visitor-name">Name:</label>
+                    <input type="text" id="visitor-name" required>
+
+                    <label for="visitor-contact">Contact:</label>
+                    <input type="text" id="visitor-contact" required>
+
+                    <label for="visitor-purpose">Purpose:</label>
+                    <input type="text" id="visitor-purpose" required>
+
+                    <label for="visitor-photo">Photo:</label>
+                    <input type="file" id="visitor-photo">
+
+                    <button type="submit">Register Visitor</button>
+                </form>
+            </div>
+
+            <!-- Visitor List -->
+            <h2>Current Visitors</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Purpose</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="visitor-list">
+                    <!-- Visitor entries will be dynamically added here -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="visitor.js"></script>
+</body>
+</html>
