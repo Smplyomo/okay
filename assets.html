@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Management | Visitor & Asset System</title>
+    <link rel="stylesheet" href="assets.css">
+</head>
+<body>
+        <main class="dashboard-main">
+            <h1>Asset Management</h1>
+
+            <!-- Asset Registration Form -->
+            <div class="form-container">
+                <h2>Register Asset</h2>
+                <form id="asset-form">
+                    <label for="asset-name">Asset Name:</label>
+                    <input type="text" id="asset-name" required>
+
+                    <label for="asset-category">Category:</label>
+                    <input type="text" id="asset-category" required>
+
+                    <button type="submit">Add Asset</button>
+                </form>
+            </div>
+
+            <!-- Asset Assignment -->
+            <div class="form-container">
+                <h2>Assign Asset</h2>
+                <form id="assign-asset-form">
+                    <label for="asset-select">Select Asset:</label>
+                    <select id="asset-select"></select>
+
+                    <label for="assign-to">Assign To:</label>
+                    <input type="text" id="assign-to" required>
+
+                    <button type="submit">Assign</button>
+                </form>
+            </div>
+
+            <!-- Asset List -->
+            <h2>Asset Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Asset Name</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="asset-list">
+                    <!-- Asset entries will be dynamically added here -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="assets.js"></script>
+</body>
+</html>
