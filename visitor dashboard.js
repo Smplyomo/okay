@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const badgePurpose = document.getElementById("badge-purpose");
     const receiptContainer = document.getElementById("receipt-container");
     const checkOutBtn = document.getElementById("check-out-btn");
+    const selectedAsset = document.getElementById("selected-asset");
 
     let loggedInEmail = sessionStorage.getItem("loggedInUser");
     let storedVisitor = JSON.parse(localStorage.getItem(loggedInEmail));
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         host.textContent = storedVisitor.host;
         checkInTime.textContent = storedVisitor.checkInTime;
         checkOutTime.textContent = storedVisitor.checkOutTime ? storedVisitor.checkOutTime : "Still Checked In";
+        selectedAsset.textContent = storedVisitor.asset || "None";
 
         // Display badge
         badgeName.textContent = `Name: ${storedVisitor.name}`;
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Host:</strong> ${storedVisitor.host}</p>
                 <p><strong>Check-in Time:</strong> ${storedVisitor.checkInTime}</p>
                 <p><strong>Check-out Time:</strong> ${storedVisitor.checkOutTime ? storedVisitor.checkOutTime : "Still Checked In"}</p>
+                <p><strong>Selected Asset:</strong> ${storedVisitor.asset || "None"}</p>
             `;
         }
     });
