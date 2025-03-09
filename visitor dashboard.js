@@ -44,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Host:</strong> ${storedVisitor.host}</p>
                 <p><strong>Check-in Time:</strong> ${storedVisitor.checkInTime}</p>
                 <p><strong>Check-out Time:</strong> ${storedVisitor.checkOutTime ? storedVisitor.checkOutTime : "Still Checked In"}</p>
-                <p><strong>Selected Asset:</strong> ${storedVisitor.asset || "None"}</p>
             `;
         }
     });
